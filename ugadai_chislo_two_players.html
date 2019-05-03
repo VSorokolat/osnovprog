@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<script>
+	
+	var user1Name = prompt("Первый игрок, введите свое имя");
+	var user2Name = prompt("Второй игрок, введите свое имя");
+	var answer = parseInt(Math.random() * 1000);
+	var userAnswer;
+	
+	while (true){
+		userAnswer = prompt(user1Name + " Ваша попытка, введите число от 0 до 1000\nДля выхода из игры наберите 'exit'");
+		if (userAnswer == "exit"){
+			alert(user1Name + " сдался, правильный ответ был " + answer);
+			break;
+		} else if (parseInt(userAnswer) < answer) {
+			alert("Загаданное число больше, ход переходит к " + user2Name);		
+		} else if (parseInt(userAnswer) > answer) {
+			alert("Загаданное число меньше, ход переходит к " + user2Name);		
+		} else if (parseInt(userAnswer) == answer) {
+			alert(user1Name + ", вы угадали, правильный ответ " + answer);	
+			break;
+		}
+		
+		userAnswer = prompt(user2Name + " Ваша попытка, введите число от 0 до 1000\nДля выхода из игры наберите 'exit'");
+		if (userAnswer == "exit"){
+			alert(user2Name + " сдался, правильный ответ был " + answer);
+			break;
+		} else if (parseInt(userAnswer) < answer) {
+			alert("Загаданное число больше, ход переходит к " + user1Name);		
+		} else if (parseInt(userAnswer) > answer) {
+			alert("Загаданное число меньше, ход переходит к " + user1Name);		
+		} else if (parseInt(userAnswer) == answer) {
+			alert(user2Name + ", вы угадали, правильный ответ " + answer);	
+			break;
+		}
+	}
+	
+	</script>
