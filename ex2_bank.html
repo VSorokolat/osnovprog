@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<script>
+	var account = +prompt("Введите сумму первоначального взноса");
+	var percent = +prompt("Введите процентную ставку");
+	var result = account;
+	var i;
+	for (i = 1; i <= 5; i++){
+		result = result * (1 + percent/100);
+		document.write("После " + i + "-го года на вашем счете будет " + result.toFixed(2) + "<br />");
+	}
+	
+	
+	</script>
